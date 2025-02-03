@@ -24,20 +24,24 @@ async function waitForSelector(selector, timeout = 5000) {
 }
 
 async function createDownloadButton(url) {
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "resume.pdf";
+  link.innerHTML =
+    "<button id='download-button'><span>FREE PDF</span></button>";
   const downloadButton = await waitForSelector(
     "#preview-panel-container button"
   );
-
   if (downloadButton) {
-    const link = document.createElement("a");
-
-    link.href = url;
-    link.download = "resume.pdf";
-
-    link.innerHTML =
-      "<button id='download-button'><span>FREE PDF</span></button>";
-
     downloadButton.replaceWith(link);
+  }
+
+  const secondDownloadButton = await waitForSelector(
+    "#builder-application > div > div:nth-of-type(2) > div:first-of-type > div:nth-of-type(3) > button"
+  );
+
+  if (secondDownloadButton) {
+    secondDownloadButton.replaceWith(link);
   }
 }
 
