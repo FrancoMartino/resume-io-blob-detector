@@ -31,3 +31,8 @@
   justify-content: inherit;
   gap: inherit;
 }
+
+
+#builder-application > div > div:nth-of-type(2) > div:first-of-type > div:nth-of-type(3) > button{
+  display: none !important;
+}

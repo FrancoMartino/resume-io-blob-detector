@@ -35,14 +35,6 @@ async function createDownloadButton(url) {
   if (downloadButton) {
     downloadButton.replaceWith(link);
   }
-
-  const secondDownloadButton = await waitForSelector(
-    "#builder-application > div > div:nth-of-type(2) > div:first-of-type > div:nth-of-type(3) > button"
-  );
-
-  if (secondDownloadButton) {
-    secondDownloadButton.replaceWith(link);
-  }
 }
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
