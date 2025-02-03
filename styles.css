@@ -1,0 +1,33 @@
+#download-button {
+  position: relative;
+  font-weight: 600;
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  appearance: none;
+  outline: none;
+  white-space: nowrap;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  background-color: rgb(26, 145, 240);
+  border-radius: 4px;
+  transition: background-color 0.1s, color 0.1s, box-shadow 0.1s;
+  cursor: pointer;
+  border-width: 0px;
+  user-select: none;
+  pointer-events: auto;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 8px 12px;
+}
+
+#download-button span {
+  display: flex;
+  -webkit-box-align: inherit;
+  align-items: inherit;
+  -webkit-box-pack: inherit;
+  justify-content: inherit;
+  gap: inherit;
+}
