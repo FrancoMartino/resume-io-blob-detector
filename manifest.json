@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "resume.io | Downloader",
+    "name": "Resume.io | Blob Detector (Experimental)",
     "version": "1.0",
-    "description": "Download your resume from resume.io for free.",
+    "description": "An experimental Chrome extension to demonstrate blob detection and handling in web applications.",
     "permissions": [
         "debugger",
         "downloads",

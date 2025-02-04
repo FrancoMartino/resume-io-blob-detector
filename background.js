@@ -17,7 +17,6 @@ function startMonitoring(tab) {
         if (source.tabId === tabId && method === "Network.responseReceived") {
           const { response } = params;
 
-          // Verificar que la URL de la respuesta es un blob de 'resume.io'
           if (response.url.startsWith("blob:https://resume.io/")) {
             console.log("Blob detectado:", response.url);
             updateDownloadBlob(response.url);
@@ -47,7 +46,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   ) {
     startMonitoring(tab);
   } else if (changeInfo.status === "complete" && tabId === tabId) {
-    stopMonitoring(); // Asegurarse de que se detenga si no es una URL válida
+    stopMonitoring();
   }
 });
 
