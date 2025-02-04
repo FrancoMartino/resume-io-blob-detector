@@ -28,7 +28,7 @@ async function createDownloadButton(url) {
   link.href = url;
   link.download = "resume.pdf";
   link.innerHTML =
-    "<button id='download-button'><span>FREE PDF</span></button>";
+    "<button id='download-button'><span>Download Blob</span></button>";
   const downloadButton = await waitForSelector(
     "#preview-panel-container button"
   );
