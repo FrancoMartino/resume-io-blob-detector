@@ -17,15 +17,18 @@ function startMonitoring(tab) {
         if (source.tabId === tabId && method === "Network.responseReceived") {
           const { response } = params;
 
-          if (response.url.startsWith("blob:https://resume.io/")) {
-            console.log("Blob detectado:", response.url);
+          if (
+            response.url.startsWith("blob:https://resume.io/") &&
+            response.mimeType === "application/pdf"
+          ) {
+            console.log("PDF Blob detected:", response.url);
             updateDownloadBlob(response.url);
           }
         }
       });
     });
   } else {
-    console.log("Debugger no se adjunta. URL no válida:", tab.url);
+    console.log("Debugger not attached. Invalid URL:", tab.url);
   }
 }
 
